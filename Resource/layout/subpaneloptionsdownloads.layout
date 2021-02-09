@@ -1,33 +1,34 @@
 "Resource/layout/subpaneloptionsdownloads.layout" {
 
 	layout {
-		place { control=RegionLabel dir=down }
-		place { control=DownloadRegionCombo dir=down width=max start=RegionLabel dir=down y=5 }
+		place { control=LibrariesLabel dir=down }
+		place { control=ManageInstalledApps dir=down start=LibrariesLabel dir=down y=10 }
 
-		place { control=RestrictionsLabel dir=down start=DownloadRegionCombo y=20 }
-		place { control=ThrottleRates dir=down width=max start=RestrictionsLabel y=5 }
+		place { control=RegionLabel dir=down start=ManageInstalledApps y=20}
+		place { control=DownloadRegionCombo dir=down width=max start=RegionLabel dir=down y=10 }
 
-		place {
-			control=AllowDownloadsDuringGameplayCheckbox,ThrottleDownloadsWhileStreamingCheckbox,DownloadRatesInBitsCheckbox,AutoUpdateTimeRestrictCheckbox
-			dir=down
-			start=ThrottleRates
-			y=20
-		}
+		place { control=RestrictionsLabel dir=down start=DownloadRegionCombo y=30 }
 
-		place { control=AutoUpdateTimeRestrictStartLabel dir=down start=AutoUpdateTimeRestrictCheckbox y=10 }
-		place { control=AutoUpdateTimeRestrictStart dir=down width=205 start=AutoUpdateTimeRestrictStartLabel y=5 }
+		place { control=AutoUpdateTimeRestrictCheckbox dir=down start=RestrictionsLabel y=10 }
+		place { control=AutoUpdateTimeRestrictStart dir=down start=AutoUpdateTimeRestrictCheckbox width=74 y=5 }
+		place { control=AutoUpdateTimeRestrictEndLabel dir=right start=AutoUpdateTimeRestrictStart x=15 y=6 }
+		place { control=AutoUpdateTimeRestrictEnd dir=right start=AutoUpdateTimeRestrictEndLabel width=74 x=15 y=-6 }
+		place { control=AllowDownloadsDuringGameplayCheckbox dir=down start=AutoUpdateTimeRestrictStart y=15 }
+		place { control=ThrottleDownloadsWhileStreamingCheckbox dir=down start=AllowDownloadsDuringGameplayCheckbox y=5 }
+		place { control=DownloadRatesInBitsCheckbox dir=down start=ThrottleDownloadsWhileStreamingCheckbox y=5 }
 
-		place { control=AutoUpdateTimeRestrictEndLabel dir=down x=225 start=AutoUpdateTimeRestrictCheckbox y=10 }
-		place { control=AutoUpdateTimeRestrictEnd dir=down width=205 start=AutoUpdateTimeRestrictEndLabel y=5 }
+		place { control=ThrottleCheckbox dir=down start=RestrictionsLabel x=250 y=10 }
+		place { control=ThrottleRateCurrent dir=right start=ThrottleCheckbox x=2 y=4 }
+		place { control=ThrottleRateEditLabel dir=down start=ThrottleCheckbox y=10 }
+		place { control=ThrottleRateEdit dir=down start=ThrottleRateEditLabel y=5 width=70 }
+		place { control=ThrottleRateEditSuffix dir=right start=ThrottleRateEdit x=10 y=6 }
+		place { control=ThrottleRateApply dir=right start=ThrottleRateEditSuffix x=10 y=-6 }
 
-		place { control=FlushDownloadConfigLabel dir=down start=AutoUpdateTimeRestrictStart y=30 }
+		place { control=FlushDownloadConfigLabel dir=down start=DownloadRatesInBitsCheckbox y=25 }
 		place { control=FlushDownloadConfig dir=down start=FlushDownloadConfigLabel y=10 }
 
-		place { control=ManageInstalledappsLabel dir=down start=FlushDownloadConfig y=30 }
-		place { control=ManageInstalledApps dir=down start=ManageInstalledappsLabel y=10 }
-
 		place {
-			control=Divider1,Divider2,Divider3,RegionInfoLabel,LibrariesLabel,ThrottleRatesLabel,AllowDownloadsDuringGameplayInfo,ThrottleDownloadsWhileStreamingInfo
+			control=Divider1,Divider2,Divider3,ManageInstalledappsLabel,RegionInfoLabel,ThrottleRatesLabel,AllowDownloadsDuringGameplayInfo,ThrottleDownloadsWhileStreamingInfo
 			height=0
 			width=0
 		}
